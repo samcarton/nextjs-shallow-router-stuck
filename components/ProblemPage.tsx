@@ -80,7 +80,7 @@ export const ProblemPage: FC<ProblemPageProps> = ({ link, nextRoute }) => {
           Double Shallow Replace
         </button>
       </div>
-      <h4>Non-shallow changes: clicking on these will fix the single-shallow routing</h4>
+      <h4>Non-shallow changes: clicking on these will fix the single-shallow routing (at least on the non-dynamic route)</h4>
       <div style={{ display: "flex", gap: "12px" }}>
         <button
           type="button"
@@ -95,8 +95,11 @@ export const ProblemPage: FC<ProblemPageProps> = ({ link, nextRoute }) => {
           Replace
         </button>
       </div>
+      <div>
       <h4>The same problem exists in both dynamic and non-dynamic page routes</h4>
+      <p>There is one difference: On dynamic page routes, in production, the non-shallow route doesn't seem to fix the shallow routing. But on local dev it does.</p>
       <div>{link}</div>
+      </div>
     </div>
   );
 };
